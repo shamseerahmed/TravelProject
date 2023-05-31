@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: pink;
+}
+button {
+       background-color: #4CAF50;
+       width: 100%;
+        color: orange;
+        padding: 15px;
+        margin: 10px 0px;
+        border: none;
+        cursor: pointer;
+         }
+ form {
+        border: 3px solid #f1f1f1;
+    }
+ input[type=text], input[type=password] {
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid green;
+        box-sizing: border-box;
+    }
+ button:hover {
+        opacity: 0.7;
+    }
+  .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        margin: 10px 5px;
+    }
+
+
+ .container {
+        padding: 25px;
+        background-color: lightblue;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTER</title>
+</head>
+<body bgcolor="Lightskyblue">
+
+<h2> REGISTRATION</h2>
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username"><br>
+       <input type="text" name="first_name" placeholder="enter your name"><br>
+           <input type="text" name="last_name" placeholder="enter your name"><br>
+               <input  type="email" name="email" placeholder="Email"><br>
+           <input type="password" name="password" placeholder="Password"><br>
+       <input type="password" name="c_password" placeholder="Confirm Password"><br>
+
+    <input type="submit">
+
+
+
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
